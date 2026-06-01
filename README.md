@@ -1,218 +1,181 @@
-\# ITSM ML Project
-
-
-
-\## Project Overview
-
-
-
-This project focuses on applying Machine Learning techniques to IT Service Management (ITSM) operations.
-
-
-
-The system automates multiple ITSM workflows including:
-
-
-
-\- Priority Prediction
-
-\- Incident Forecasting
-
-\- Auto Ticket Tagging
-
-\- RFC Risk Prediction
-
-
-
-\## Business Objectives
-
-
-
-\- Improve SLA management
-
-\- Reduce operational delays
-
-\- Improve ticket routing
-
-\- Forecast incident workload
-
-\- Predict operational risks
-
-
-
-\## Machine Learning Models Used
-
-
-
-| Use Case | Model |
-
-|----------|-------|
-
-| Priority Prediction | XGBoost |
-
-| Forecasting | Prophet |
-
-| Auto Tagging | XGBoost |
-
-| RFC Risk Prediction | XGBoost |
-
-
-
-\## Technologies Used
-
-
-
-\- Python
-
-\- Pandas
-
-\- Scikit-learn
-
-\- XGBoost
-
-\- Prophet
-
-\- Flask
-
-\- Matplotlib
-
-\- Seaborn
-
-
-
-\## Project Structure
-
-
-
-```text
-
-ITSM\_ML\_Project/																	
-
-Conclusion:
-
-
-
-
-
-
-
-
-
-\---
-
-
-
-\# 3. FINAL PROJECT CLEANUP
-
-
-
-REMOVE:
-
-\- duplicate notebooks
-
-\- temporary CSVs
-
-\- experimental cells
-
-\- commented garbage code
-
-\- unused imports
-
-
-
-Keep notebooks clean.
-
-
-
-\---
-
-
-
-\# 4. FINAL TEST
-
-
-
-MOST IMPORTANT.
-
-
-
-From fresh restart:
-
-
-
-1\. Open project
-
-2\. Run notebooks sequentially
-
-3\. Ensure NO RED ERRORS
-
-4\. Run Flask app
-
-5\. Test browser endpoint
-
-
-
-If all works:
-
-project is DONE.
-
-
-
-\---
-
-
-
-\# FINAL HONEST ASSESSMENT
-
-
-
-Your project is now significantly above normal student-level ML submissions because it includes:
-
-
-
-✅ Multi-model architecture  
-
-✅ Time series forecasting  
-
-✅ Classification systems  
-
-✅ Risk prediction  
-
-✅ Deployment API  
-
-✅ Saved ML pipelines  
-
-✅ Business use-cases  
-
-✅ Structured project organization  
-
-
-
-Most students stop at:
-
-```text id="p5m8q2"
-
-single notebook + one accuracy score
-
-How to Run
-
-Install requirements
-
-Run notebooks
-
-Start Flask app
-
+ITSM ML Project
+Overview
+The ITSM ML Project is an end-to-end Machine Learning system designed to automate and optimize IT Service Management (ITSM) operations.
+
+This project applies Machine Learning, Forecasting, and Predictive Analytics techniques to improve operational efficiency, automate service workflows, and reduce manual incident handling efforts.
+
+The system includes:
+
+Incident Priority Prediction
+Incident Volume Forecasting
+Auto Ticket Tagging
+RFC Risk Prediction
+Flask API Deployment
+GitHub Version Control
+Business Problem
+Modern ITSM environments generate large volumes of incidents, change requests, and operational alerts daily.
+
+Manual handling introduces:
+
+SLA violations
+delayed ticket resolution
+incorrect ticket routing
+operational instability
+poor workload forecasting
+increased downtime risks
+This project addresses those challenges using Machine Learning automation.
+
+Project Objectives
+The main objectives of this system are:
+
+Predict incident priority automatically
+Forecast future incident volumes
+Automate ticket categorization/tagging
+Predict operational RFC risks
+Improve IT operational efficiency
+Support proactive service management
+Project Architecture
+ITSM_ML_Project/
+
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│   ├── 01_data_extraction.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_priority_prediction.ipynb
+│   ├── 04_forecasting.ipynb
+│   ├── 05_auto_tagging.ipynb
+│   └── 06_rfc_failure_prediction.ipynb
+│
+├── models/
+│   ├── priority_model.pkl
+│   ├── forecast_model.pkl
+│   ├── auto_tagging_model.pkl
+│   └── rfc_risk_model.pkl
+│
+├── app/
+│   └── app.py
+│
+├── utils/
+│   └── helper.py
+│
+├── reports/
+│
+├── requirements.txt
+│
+└── README.md
+Machine Learning Use Cases
+Use Case	ML Type	Model Used
+Priority Prediction	Classification	XGBoost
+Incident Forecasting	Time Series Forecasting	Prophet
+Auto Ticket Tagging	Classification	XGBoost
+RFC Risk Prediction	Classification	XGBoost
+Technologies Used
+Programming Language
+Python
+Data Processing
+Pandas
+NumPy
+Data Visualization
+Matplotlib
+Seaborn
+Machine Learning
+Scikit-learn
+XGBoost
+Forecasting
+Prophet
+Statsmodels
+Deployment
+Flask
+Model Persistence
+Joblib
+Version Control
+Git
+GitHub
+Data Preprocessing
+The preprocessing pipeline includes:
+
+missing value handling
+duplicate removal
+datetime feature extraction
+categorical encoding
+feature engineering
+incident operational metrics generation
+Generated features include:
+
+Open_Year
+Open_Month
+Open_Day
+Open_Hour
+Open_Weekday
+Handle_Time_hrs
+Model Performance
+Priority Prediction
+Model	Accuracy
+Logistic Regression	~66%
+Random Forest	~80%
+XGBoost	~82%
+Auto Ticket Tagging
+Model	Accuracy
+Random Forest	~99%
+XGBoost	~99%
+RFC Risk Prediction
+Model	Cross Validation Accuracy
+XGBoost	~93.5%
+Forecasting System
+The forecasting module predicts future incident volumes using Prophet.
+
+Forecasting capabilities include:
+
+incident trend analysis
+operational workload prediction
+proactive staffing support
+incident seasonality analysis
+Flask API Deployment
+The project includes Flask deployment for real-time prediction serving.
+
+Available APIs
+Priority Prediction API
+/predict_priority
+RFC Risk Prediction API
+/ predict_rfc_risk
+Installation
+Clone Repository
+git clone https://github.com/Jaswanthraj955/ITSM_ML_Project.git
+Move to Project Directory
+cd ITSM_ML_Project
+Install Dependencies
 pip install -r requirements.txt
-
+Run Flask Application
 python app/app.py
+Application runs on:
 
-Results
+http://127.0.0.1:5000
+Future Improvements
+Possible future enhancements:
 
-Priority Prediction Accuracy: \~82%
+Streamlit dashboard
+Real-time ticket streaming
+NLP-based ticket summarization
+Cloud deployment
+Docker containerization
+CI/CD pipeline integration
+Conclusion
+This project demonstrates a complete end-to-end Machine Learning workflow for IT Service Management automation.
 
-Auto Tagging Accuracy: \~99%
+The system integrates:
 
-RFC Risk Prediction Accuracy: \~93%
+data engineering
+machine learning
+forecasting
+API deployment
+operational analytics
+version control
+to build a scalable and deployment-ready ITSM intelligence platform.
 
-Forecasting completed using Prophet
+Author
+Jaswanth Raj
 
+GitHub: https://github.com/Jaswanthraj955
